@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ITIViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITableView *taskTableView;
+- (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender;
 
 @end

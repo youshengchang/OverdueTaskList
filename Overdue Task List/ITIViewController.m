@@ -26,4 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender {
+}
+
+- (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender {
+    [self performSegueWithIdentifier:@"toAddTaskViewControllerSegue" sender:sender];
+}
 @end
