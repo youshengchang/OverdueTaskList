@@ -14,6 +14,15 @@
 
 @implementation ITIViewController
 
+-(NSMutableArray *)taskObjects
+{
+    if(!_taskObjects){
+        _taskObjects = [[NSMutableArray alloc]init];
+        
+    }
+    return _taskObjects;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

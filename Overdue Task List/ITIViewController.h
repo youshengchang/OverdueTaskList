@@ -11,6 +11,8 @@
 
 @interface ITIViewController : UIViewController <ITIAddTaskViewControllerDelegate>
 
+@property (strong, nonatomic) NSMutableArray *taskObjects;
+
 @property (strong, nonatomic) IBOutlet UITableView *taskTableView;
 - (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender;
