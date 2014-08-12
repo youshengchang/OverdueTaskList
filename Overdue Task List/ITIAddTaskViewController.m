@@ -27,12 +27,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.taskTextView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 /*
@@ -47,8 +49,43 @@
 */
 
 - (IBAction)addTaskButtonPressed:(UIButton *)sender {
+    [self.delegate didAddTask:[self getTaskObject]];
 }
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
+    NSLog(@"Cancel");
+    [self.delegate didCancel];
+    
+}
+
+- (IBAction)editEnded:(UITextField *)sender {
+    [self resignFirstResponder];
+}
+
+- (IBAction)editEndOnExit:(UITextField *)sender {
+    [self resignFirstResponder];
+}
+#pragma mark implementing the UITextViewDelegate
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if([text isEqualToString:@"\n"]){
+        [self.taskTextView resignFirstResponder];
+        return NO;
+    }else{
+        return YES;
+    }
+}
+
+
+#pragma mark Helper methods
+-(ITITaskObject *)getTaskObject
+{
+    ITITaskObject *newTask = [[ITITaskObject alloc]init];
+    newTask.title = self.taskNameTextField.text;
+    newTask.description = self.taskTextView.text;
+    newTask.date = self.taskDatePicker.date;
+    newTask.completion = NO;
+    return newTask;
+    
 }
 @end

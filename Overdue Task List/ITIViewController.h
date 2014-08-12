@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITIAddTaskViewController.h"
 
-@interface ITIViewController : UIViewController
+@interface ITIViewController : UIViewController <ITIAddTaskViewControllerDelegate>
+
 @property (strong, nonatomic) IBOutlet UITableView *taskTableView;
 - (IBAction)reorderButtonPressed:(UIBarButtonItem *)sender;
 - (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender;

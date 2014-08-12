@@ -18,6 +18,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,5 +33,29 @@
 
 - (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender {
     [self performSegueWithIdentifier:@"toAddTaskViewControllerSegue" sender:sender];
+}
+
+#pragma mark Navigation
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if([segue.identifier isEqualToString:@"toAddTaskViewControllerSegue"]){
+        NSLog(@"segue's identifier: %@", segue.identifier);
+        ITIAddTaskViewController *addTaskVC = segue.destinationViewController;
+        addTaskVC.delegate = self;
+    }
+    
+}
+
+#pragma mark - ITIAddTaskViewControllerDelegate methods
+-(void)didCancel
+{
+    NSLog(@"get Cancel Message");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)didAddTask:(ITITaskObject *)task
+{
+    NSLog(@"task's title %@ task's description: %@", task.title, task.description);
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
