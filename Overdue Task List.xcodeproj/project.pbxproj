@@ -25,6 +25,7 @@
 		8F88480B19986BD5007A5D08 /* ITIDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F88480A19986BD5007A5D08 /* ITIDetailTaskViewController.m */; };
 		8F88480E19986C7D007A5D08 /* ITIEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F88480D19986C7D007A5D08 /* ITIEditTaskViewController.m */; };
 		8F88481119987872007A5D08 /* ITITaskObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F88481019987872007A5D08 /* ITITaskObject.m */; };
+		8FCADA23199FE00F00075E10 /* PirateStart.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8FCADA22199FE00F00075E10 /* PirateStart.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8F88480D19986C7D007A5D08 /* ITIEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITIEditTaskViewController.m; sourceTree = "<group>"; };
 		8F88480F19987872007A5D08 /* ITITaskObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITITaskObject.h; sourceTree = "<group>"; };
 		8F88481019987872007A5D08 /* ITITaskObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITITaskObject.m; sourceTree = "<group>"; };
+		8FCADA22199FE00F00075E10 /* PirateStart.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PirateStart.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		8F8847D819986A55007A5D08 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8FCADA22199FE00F00075E10 /* PirateStart.jpg */,
 				8F8847D919986A55007A5D08 /* Overdue Task List-Info.plist */,
 				8F8847DA19986A55007A5D08 /* InfoPlist.strings */,
 				8F8847DD19986A55007A5D08 /* main.m */,
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F8847EA19986A55007A5D08 /* Images.xcassets in Resources */,
+				8FCADA23199FE00F00075E10 /* PirateStart.jpg in Resources */,
 				8F8847DC19986A55007A5D08 /* InfoPlist.strings in Resources */,
 				8F8847E519986A55007A5D08 /* Main.storyboard in Resources */,
 			);
