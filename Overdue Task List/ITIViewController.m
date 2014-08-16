@@ -159,7 +159,7 @@
     cell.textLabel.text = task.title;
     NSDate *date = task.date;
     NSDateFormatter *formater = [[NSDateFormatter alloc]init];
-    [formater setDateFormat:@"yyyy-MM-dd"];
+    [formater setDateFormat:@"yyyy-MM-dd h:mm a"];
     NSString *dateString = [formater stringFromDate:date];
     cell.detailTextLabel.text = dateString;
     if(task.completion == YES){

@@ -40,7 +40,7 @@
     self.taskTitleLabel.text = self.task.title;
     self.taskDescriptionLabel.text = self.task.description;
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"yyyy-MM-dd"];
+    [formatter setDateFormat:@"yyyy-MM-dd h:mm a"];
     
     self.taskDateLabel.text = [formatter stringFromDate:self.task.date];
 
