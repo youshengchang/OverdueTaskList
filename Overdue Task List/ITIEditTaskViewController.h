@@ -21,9 +21,10 @@
 @property (strong, nonatomic) NSIndexPath *indexPath;
 @property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;
 @property (strong, nonatomic) IBOutlet UITextView *taskTextView;
+@property (strong, nonatomic) IBOutlet UISwitch *taskStatusWitch;
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)taskStatusSwitchValueChanged:(UISwitch *)sender;
 
 - (IBAction)didEndOnExit:(UITextField *)sender;
-
 @end

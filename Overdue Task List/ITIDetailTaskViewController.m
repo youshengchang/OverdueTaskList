@@ -43,6 +43,11 @@
     [formatter setDateFormat:@"yyyy-MM-dd h:mm a"];
     
     self.taskDateLabel.text = [formatter stringFromDate:self.task.date];
+    if(self.task.completion)self.taskStatusSwitch.on = YES;
+    else
+        self.taskStatusSwitch.on = NO;
+    
+   
 
 }
 - (void)didReceiveMemoryWarning
@@ -71,12 +76,28 @@
 
 
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
+    self.task.completion = self.taskStatusSwitch.on;
     [self performSegueWithIdentifier:@"toEditTaskViewControllerSegue" sender:sender];
 }
+
+- (IBAction)taskStatusSwitchValueChanged:(UISwitch *)sender {
+    NSLog(@"switch: %i", self.taskStatusSwitch.on);
+    if(self.taskStatusSwitch.on){
+        self.task.completion = YES;
+    }else{
+        self.task.completion = NO;
+    }
+    [self.delegate didEdit:self.task atIndex:self.indexpath];
+    
+}
+
+
 
 #pragma mark implementing the ITIEditViewControllerDelegate
 -(void)didEdit:(ITITaskObject *)task
 {
+    NSLog(@"task's completion: %i", task.completion);
+    
     [self.delegate didEdit:task atIndex:self.indexpath];
     [self.navigationController popViewControllerAnimated:YES];
     self.task = task;

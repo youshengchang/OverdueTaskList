@@ -20,7 +20,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *taskTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;
+@property (strong, nonatomic) IBOutlet UISwitch *taskStatusSwitch;
 
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)taskStatusSwitchValueChanged:(UISwitch *)sender;
 
 @end

@@ -30,6 +30,7 @@
     self.taskNameTextField.text = self.task.title;
     self.taskTextView.text = self.task.description;
     self.taskDatePicker.date = self.task.date;
+    self.taskStatusWitch.on = self.task.completion;
     /*
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     datePicker.frame = CGRectMake(0, 0, 320, 80);
@@ -73,7 +74,16 @@
     self.task.title = self.taskNameTextField.text;
     self.task.description = self.taskTextView.text;
     self.task.date = self.taskDatePicker.date;
+    self.task.completion = self.taskStatusWitch.on;
     [self.delegate didEdit:self.task];
+}
+
+- (IBAction)taskStatusSwitchValueChanged:(UISwitch *)sender {
+    if(self.taskStatusWitch.on){
+        self.task.completion = YES;
+    }else{
+        self.task.completion = NO;
+    }
 }
 
 
@@ -81,5 +91,7 @@
 - (IBAction)didEndOnExit:(UITextField *)sender {
     [self resignFirstResponder];
 }
+
+
 
 @end
