@@ -49,6 +49,8 @@
 */
 
 - (IBAction)addTaskButtonPressed:(UIButton *)sender {
+    ITITaskObject *task = [self getTaskObject];
+    NSLog(@"task tile: %@ task description: %@ date: %@", task.title, task.description, task.date);
     [self.delegate didAddTask:[self getTaskObject]];
 }
 
@@ -58,16 +60,14 @@
     
 }
 
-- (IBAction)editEnded:(UITextField *)sender {
-    [self resignFirstResponder];
-}
-
 - (IBAction)editEndOnExit:(UITextField *)sender {
     [self resignFirstResponder];
 }
+
 #pragma mark implementing the UITextViewDelegate
 -(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
+    NSLog(@"entering textView in AddTask");
     if([text isEqualToString:@"\n"]){
         [self.taskTextView resignFirstResponder];
         return NO;

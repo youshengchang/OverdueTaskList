@@ -27,6 +27,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.taskNameTextField.text = self.task.title;
+    self.taskTextView.text = self.task.description;
+    self.taskDatePicker.date = self.task.date;
+    /*
+    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    datePicker.frame = CGRectMake(0, 0, 320, 80);
+    datePicker.transform = CGAffineTransformMakeScale(.5, 0.5);
+    [self.datePickerView addSubview:datePicker];
+     */
+    self.taskTextView.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,6 +46,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark implementing the UITextViewDelegate
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    NSLog(@"enter textView in EditTask");
+    if([text isEqualToString:@"\n"]){
+        [self.taskTextView resignFirstResponder];
+        return NO;
+    }else{
+        return YES;
+    }
+}
 /*
 #pragma mark - Navigation
 
@@ -47,5 +69,17 @@
 */
 
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender {
+    
+    self.task.title = self.taskNameTextField.text;
+    self.task.description = self.taskTextView.text;
+    self.task.date = self.taskDatePicker.date;
+    [self.delegate didEdit:self.task];
 }
+
+
+
+- (IBAction)didEndOnExit:(UITextField *)sender {
+    [self resignFirstResponder];
+}
+
 @end

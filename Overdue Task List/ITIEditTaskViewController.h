@@ -7,11 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITITaskObject.h"
 
-@interface ITIEditTaskViewController : UIViewController
+@protocol ITIEditViewControllerDelegate <NSObject>
+-(void)didEdit:(ITITaskObject *)task;
+
+@end
+
+@interface ITIEditTaskViewController : UIViewController <UITextViewDelegate>
+@property (weak, nonatomic)id <ITIEditViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UIDatePicker *taskDatePicker;
+@property (strong, nonatomic) ITITaskObject *task;
+@property (strong, nonatomic) NSIndexPath *indexPath;
 @property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;
 @property (strong, nonatomic) IBOutlet UITextView *taskTextView;
-@property (strong, nonatomic) IBOutlet UIDatePicker *taskDatePicker;
+
 - (IBAction)saveButtonPressed:(UIBarButtonItem *)sender;
+
+- (IBAction)didEndOnExit:(UITextField *)sender;
 
 @end

@@ -22,7 +22,7 @@
     self.title = data[TASK_TITLE];
     self.description = data[TASK_DESCRIPTION];
     self.date = data[TASK_DATE];
-    self.completion = data[TASK_COMPLETION];
+    self.completion = [data[TASK_COMPLETION] boolValue];
     return self;
     
 }

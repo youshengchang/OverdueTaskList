@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITITaskObject.h"
+#import "ITIEditTaskViewController.h"
+@protocol ITIDetailViewControllerDelegate <NSObject>
+-(void)didEdit:(ITITaskObject *)task atIndex:(NSIndexPath *)indexPath;
 
-@interface ITIDetailTaskViewController : UIViewController
+@end
+@interface ITIDetailTaskViewController : UIViewController <ITIEditViewControllerDelegate>
+@property (weak, nonatomic) id <ITIDetailViewControllerDelegate> delegate;
+@property (strong,nonatomic)    ITITaskObject *task;
+@property (strong, nonatomic)   NSIndexPath *indexpath;
 @property (strong, nonatomic) IBOutlet UILabel *taskTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDescriptionLabel;
-@property (strong, nonatomic) IBOutlet UILabel *taskDate;
+@property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;
+
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender;
 
 @end

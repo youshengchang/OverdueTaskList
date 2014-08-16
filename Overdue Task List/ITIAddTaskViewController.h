@@ -19,13 +19,13 @@
 
 @interface ITIAddTaskViewController : UIViewController<UITextViewDelegate>
 @property (weak, nonatomic) id <ITIAddTaskViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UIDatePicker *taskDatePicker;
 
 @property (strong, nonatomic) IBOutlet UITextField *taskNameTextField;
 @property (strong, nonatomic) IBOutlet UITextView *taskTextView;
-@property (strong, nonatomic) IBOutlet UIDatePicker *taskDatePicker;
+
 - (IBAction)addTaskButtonPressed:(UIButton *)sender;
 - (IBAction)cancelButtonPressed:(UIButton *)sender;
-- (IBAction)editEnded:(UITextField *)sender;
 - (IBAction)editEndOnExit:(UITextField *)sender;
 
 @end

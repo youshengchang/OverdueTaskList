@@ -489,6 +489,7 @@
 				8F88480219986A55007A5D08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8F88480319986A55007A5D08 /* Build configuration list for PBXNativeTarget "Overdue Task ListTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +498,7 @@
 				8F88480519986A55007A5D08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
