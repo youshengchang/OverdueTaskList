@@ -83,7 +83,7 @@
     self.task.description = self.taskTextView.text;
     self.task.date = self.taskDatePicker.date;
     self.task.completion = self.taskStatusWitch.on;
-    [self.delegate didEdit:self.task];
+    [self.delegate didEdit];
 }
 
 - (IBAction)taskStatusSwitchValueChanged:(UISwitch *)sender {

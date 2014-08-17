@@ -260,12 +260,10 @@
 }
 
 #pragma mark - implementing the ITIDetailViewControllerDelegate
--(void)didEdit:(ITITaskObject *)task atIndex:(NSIndexPath *)indexPath
+-(void)didEdit
 {
-    NSLog(@"task completion: %i",task.completion);
-    [self.taskObjects setObject:task atIndexedSubscript:indexPath.row];
+    NSLog(@"taskObjects: %@", self.taskObjects);
     [self saveTasks];
-    [self.taskObjects setObject:task atIndexedSubscript:indexPath.row];
     [self.taskTableView reloadData];
     
 }

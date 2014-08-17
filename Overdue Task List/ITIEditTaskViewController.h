@@ -10,7 +10,7 @@
 #import "ITITaskObject.h"
 
 @protocol ITIEditViewControllerDelegate <NSObject>
--(void)didEdit:(ITITaskObject *)task;
+-(void)didEdit;
 
 @end
 

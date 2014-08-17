@@ -10,7 +10,7 @@
 #import "ITITaskObject.h"
 #import "ITIEditTaskViewController.h"
 @protocol ITIDetailViewControllerDelegate <NSObject>
--(void)didEdit:(ITITaskObject *)task atIndex:(NSIndexPath *)indexPath;
+-(void)didEdit;
 
 @end
 @interface ITIDetailTaskViewController : UIViewController <ITIEditViewControllerDelegate>

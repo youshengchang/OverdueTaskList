@@ -87,20 +87,19 @@
     }else{
         self.task.completion = NO;
     }
-    [self.delegate didEdit:self.task atIndex:self.indexpath];
+    [self.delegate didEdit];
     
 }
 
 
 
 #pragma mark implementing the ITIEditViewControllerDelegate
--(void)didEdit:(ITITaskObject *)task
+-(void)didEdit
 {
-    NSLog(@"task's completion: %i", task.completion);
+    NSLog(@"task's completion: %i", self.task.completion);
     
-    [self.delegate didEdit:task atIndex:self.indexpath];
-    [self.navigationController popViewControllerAnimated:YES];
-    self.task = task;
+    [self.delegate didEdit];
+    [self.navigationController popViewControllerAnimated:YES];    
     [self updateView];
     
     
