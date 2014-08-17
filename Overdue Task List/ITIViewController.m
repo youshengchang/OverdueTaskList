@@ -56,7 +56,7 @@
 }
 
 - (IBAction)addTaskButtonPressed:(UIBarButtonItem *)sender {
-    [self performSegueWithIdentifier:@"toAddTaskViewControllerSegue" sender:sender];
+    [self performSegueWithIdentifier:@"toAddTaskViewControllerSegue" sender:nil];
 }
 
 #pragma mark Navigation

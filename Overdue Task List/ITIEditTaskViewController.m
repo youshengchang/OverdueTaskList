@@ -38,6 +38,7 @@
     [self.datePickerView addSubview:datePicker];
      */
     self.taskTextView.delegate = self;
+    self.taskNameTextField.delegate = self;
     
 }
 
@@ -57,6 +58,13 @@
     }else{
         return YES;
     }
+}
+
+#pragma -UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.taskNameTextField resignFirstResponder];
+    return YES;
 }
 /*
 #pragma mark - Navigation

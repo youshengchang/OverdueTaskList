@@ -14,7 +14,7 @@
 
 @end
 
-@interface ITIEditTaskViewController : UIViewController <UITextViewDelegate>
+@interface ITIEditTaskViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic)id <ITIEditViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIDatePicker *taskDatePicker;
 @property (strong, nonatomic) ITITaskObject *task;

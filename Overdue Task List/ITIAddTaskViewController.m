@@ -29,6 +29,7 @@
     // Do any additional setup after loading the view.
     
     self.taskTextView.delegate = self;
+    self.taskNameTextField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -77,6 +78,12 @@
     }
 }
 
+#pragma mark UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.taskNameTextField resignFirstResponder];
+    return YES;
+}
 
 #pragma mark Helper methods
 -(ITITaskObject *)getTaskObject
